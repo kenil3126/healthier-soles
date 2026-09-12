@@ -97,9 +97,20 @@
         .site-footer-three .site-footer__bottom { display: none !important; }
         .courses-one { display: none !important; }
         .site-footer-three .footer-widget__about .site-footer__social { margin-top: 28px; }
+        .site-footer-three .footer-email { align-items: center; color: rgba(255,255,255,.82); display: flex; font-size: 14px; gap: 8px; margin-top: 18px; text-decoration: none; }
+        .site-footer-three .footer-email:hover { color: #f5a623; }
+        .site-footer__social a:has(.icon-facebook),
+        .site-footer__social a:has(.icon-twitter),
+        .site-footer__social a:has(.icon-youtube),
+        .healthier-footer a:has(.icon-facebook),
+        .healthier-footer a:has(.icon-twitter),
+        .healthier-footer a:has(.icon-youtube) { display: none !important; }
+        .site-footer-three .site-footer__top-inner { padding-top: 80px; }
+
+
         .site-footer-three .footer-widget__about-text { display: none !important; }
         .site-footer-three .footer-widget__links { transform: translate(150px, -10px); }
-        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 22px auto 0; max-width: 1120px; padding: 22px 24px 0; text-align: left; white-space: pre-line; }
+        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 8px auto 0; max-width: 1120px; padding: 8px 24px 0; text-align: left; white-space: pre-line; }
 
         .site-footer-three__shape-1 {
             display: none !important;
@@ -620,7 +631,7 @@
 
         .founders-showcase__grid {
             display: grid;
-            gap: 34px;
+            gap: 110px;
             grid-template-columns: minmax(0, 820px);
             justify-content: center;
             margin: 0 auto;
@@ -721,6 +732,7 @@
             margin: 0 auto;
             max-width: 420px;
             position: relative;
+            text-transform: none !important;
             z-index: 1;
         }
 
@@ -731,7 +743,7 @@
 
             .founders-showcase__grid {
                 grid-template-columns: 1fr;
-                gap: 78px;
+                gap: 110px;
             }
 
             .founder-card {
@@ -816,6 +828,7 @@
             position: relative;
             padding: 0;
             overflow: hidden;
+            aspect-ratio: 16 / 7;
         }
 
         .page-header--full-img {
@@ -825,19 +838,33 @@
         .page-header__full-img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .page-header--full-img .container {
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 40px;
+            bottom: 70px;
         }
 
         .page-header .container {
-            position: relative;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 70px;
             z-index: 1;
+        }
+
+        .page-header h1 {
+            color: #000000;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 52px;
+            line-height: 1.1;
+            margin: 0;
+            text-align: center;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, .55);
         }
 
         .page-header .thm-breadcrumb li,
@@ -919,6 +946,9 @@
         <!--Page Header Start-->
         <section class="page-header page-header--full-img">
             <img class="page-header__full-img" src="assets/images/backgrounds/page-header-bg.jpg" alt="Healthier Soles team">
+            <div class="container">
+                <h1>Our Story</h1>
+            </div>
         </section>
         <!--Page Header End-->
 
@@ -2155,7 +2185,7 @@
         <!--Team One End -->
 
         <!--Impact Gallery Start -->
-        <section class="impact-gallery">
+        <!--<section class="impact-gallery">
             <div class="container">
                 <h2 class="impact-gallery__title">Impact <span>Gallery</span></h2>
                 <div class="impact-gallery__grid">
@@ -2165,7 +2195,7 @@
                     <div class="impact-gallery__item" data-aos="fade-up" data-aos-delay="300"><img src="assets/images/project/project-1-3.jpg" alt="Healthier Soles outreach work"></div>
                 </div>
             </div>
-        </section>
+        </section>--> 
         <!--Impact Gallery End -->
 
         <!--FAQ One Start -->
@@ -2412,7 +2442,7 @@
                             <path d="M12 20.5s-7.5-4.6-10-9.2C.3 8 1.6 4.5 5 3.6c2.2-.6 4.3.3 5.4 2.1L12 7.6l1.6-1.9c1.1-1.8 3.2-2.7 5.4-2.1 3.4.9 4.7 4.4 3 7.7-2.5 4.6-10 9.2-10 9.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
                         </svg>
                     </a>
-                    <a class="tomorrow-cta__button tomorrow-cta__button--outline" href="index.html#contact">Join Team
+                    <a class="tomorrow-cta__button tomorrow-cta__button--outline" href="join%20our%20team.html">Join Team
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5" />
                             <circle cx="16" cy="9" r="2.1" stroke="currentColor" stroke-width="1.5" />
@@ -2438,7 +2468,7 @@
                         <div class="healthier-footer__social">
                             <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
                             <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                            <a href="https://www.instagram.com/healthiersolesorg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="icon-instagram"></i></a>
                             <a href="#" aria-label="YouTube"><i class="icon-youtube"></i></a>
                         </div>
                     </div>
@@ -2448,8 +2478,8 @@
                             <li><a href="index.html#home">Home</a></li>
                             <li><a href="story.html">Our Story</a></li>
                             <li><a href="index.html#our-cause">Our Cause</a></li>
-                            <li><a href="index.html#our-partners">Our Partners</a></li>
-                            <li><a href="index.html#our-events">Our Events</a></li>
+                            <li><a href="partners.html">Our Partners</a></li>
+                            <li><a href="events.html">Our Events</a></li>
                         </ul>
                     </div>
                     <div>
@@ -2492,6 +2522,7 @@
                                     <div class="footer-widget__about-logo footer-widget__about-logo--brand">
                                         <a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a>
                                     </div>
+                                    <a class="footer-email" href="mailto:info@healthiersoles.org"><i class="icon-mail" aria-hidden="true"></i><span>info@healthiersoles.org</span></a>
                                     <p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p>
                                     <div class="site-footer__social">
                                         <a href="#"><i class="icon-facebook"></i></a>
@@ -2508,8 +2539,8 @@
                                         <li><a href="index.html#home">Home</a></li>
                                         <li><a href="story.html">Our Story</a></li>
                                         <li><a href="cause.html">Our Cause</a></li>
-                                        <li><a href="index.html#our-partners">Our Partners</a></li>
-                                        <li><a href="index.html#our-events">Our Events</a></li>
+                                        <li><a href="partners.html">Our Partners</a></li>
+                                        <li><a href="events.html">Our Events</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2553,7 +2584,7 @@
         <footer class="site-footer site-footer-three" id="contact">
             <div class="site-footer-three__bg" style="background-image: url(assets/images/backgrounds/site-footer-three-bg.jpg);"></div>
             <div class="site-footer__top"><div class="container"><div class="site-footer__top-inner"><div class="row">
-                <div class="col-xl-5 col-lg-4 col-md-6"><div class="footer-widget__about"><div class="footer-widget__about-logo footer-widget__about-logo--brand"><a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a></div><p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p><div class="site-footer__social"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-instagram"></i></a><a href="#"><i class="icon-youtube"></i></a></div></div></div>
+                <div class="col-xl-5 col-lg-4 col-md-6"><div class="footer-widget__about"><div class="footer-widget__about-logo footer-widget__about-logo--brand"><a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a></div><a class="footer-email" href="mailto:info@healthiersoles.org"><i class="icon-mail" aria-hidden="true"></i><span>info@healthiersoles.org</span></a><p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p><div class="site-footer__social"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="https://www.instagram.com/healthiersolesorg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="icon-instagram"></i></a><a href="#"><i class="icon-youtube"></i></a></div></div></div>
                 <div class="col-xl-4 col-lg-4 col-md-6"><div class="footer-widget__links"><h4 class="footer-widget__title">Quick links</h4><ul class="footer-widget__links-list list-unstyled"><li><a href="index.html#home">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="cause.html">Our Cause</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="events.html">Our Events</a></li></ul></div></div>
                 <div class="col-xl-3 col-lg-4 col-md-6"><div class="footer-widget__services"><h4 class="footer-widget__title">Services</h4><ul class="footer-widget__links-list list-unstyled"><li><a href="about.html">Emergency Relief</a></li><li><a href="about.html">Medical Outreach</a></li><li><a href="about.html">Educational Support</a></li><li><a href="about.html">Mental Health</a></li><li><a href="about.html">Community Development</a></li></ul></div></div>
             </div></div></div></div>

@@ -68,6 +68,9 @@
             padding-top: 84px;
         }
 
+                .site-footer-three .site-footer__top-inner {
+                    padding-top: 80px;
+                }
         .hs-header {
             position: fixed;
             left: 0;
@@ -215,11 +218,31 @@
         }
 
         .site-footer-three .footer-widget__links {
-            transform: translate(150px, -10px);
+            transform: translate(150px, -25px);
         }
 
         .site-footer-three .footer-widget__about .site-footer__social {
             margin-top: 28px;
+        }
+
+        .site-footer-three .footer-email {
+            align-items: center;
+            color: rgba(255, 255, 255, .82);
+            display: flex;
+            font-size: 14px;
+            gap: 8px;
+            margin-top: 18px;
+            text-decoration: none;
+        }
+
+        .site-footer-three .footer-email:hover {
+            color: #f5a623;
+        }
+
+        .site-footer__social a:has(.icon-facebook),
+        .site-footer__social a:has(.icon-twitter),
+        .site-footer__social a:has(.icon-youtube) {
+            display: none !important;
         }
 
         .site-footer__legal-note {
@@ -227,9 +250,9 @@
             color: rgba(255, 255, 255, .68);
             font-size: 12px;
             line-height: 1.7;
-            margin: 22px auto 0;
+            margin: 8px auto 0;
             max-width: 1120px;
-            padding: 22px 24px 0;
+            padding: 8px 24px 0;
             text-align: left;
         }
 
@@ -277,6 +300,7 @@
 
         .main-slider-two__text {
             color: #ffffff !important;
+            text-transform: none !important;
             text-shadow: 0 2px 4px rgba(0, 0, 0, .7);
         }
 
@@ -464,8 +488,63 @@
 
         .about-new__features {
             display: flex;
-            gap: 22px;
+            column-gap: 42px;
+            row-gap: 22px;
             flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .about-new__impact-image {
+            border-radius: 18px;
+            box-shadow: 0 16px 34px rgba(18, 29, 24, .16);
+            margin-top: 24px;
+            overflow: hidden;
+        }
+
+        .about-new__impact-image img {
+            display: block;
+            height: 360px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .about-new__trip-box {
+            align-items: center;
+            background: #10231c;
+            border-radius: 12px;
+            box-shadow: 0 12px 26px rgba(18, 29, 24, .14);
+            color: #ffffff;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding: 22px 24px;
+        }
+
+        .about-new__trip-text {
+            color: #ffffff;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .about-new__trip-button {
+            background: #e1c88e;
+            border-radius: 6px;
+            color: #16241f;
+            flex: 0 0 auto;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 11px 18px;
+            text-decoration: none;
+            transition: background-color 200ms ease, transform 200ms ease;
+        }
+
+        .about-new__trip-button:hover {
+            background: #f0dca9;
+            color: #16241f;
+            transform: translateY(-2px);
         }
 
         .about-new__feature {
@@ -553,6 +632,10 @@
 
         .project-one__bg-color {
             display: none;
+        }
+
+        .project-one {
+            padding-top: 35px;
         }
 
         .project-one .section-title__title {
@@ -1632,6 +1715,14 @@
         }
 
         /* ===== Story/quote card polish ===== */
+        .courses-three .inspiration-panel {
+            background: #f7faf5;
+            border: 1px solid #dce8dc;
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(18, 29, 24, .12);
+            padding: 42px 42px 48px;
+        }
+
         .courses-three__single {
             align-items: stretch !important;
             gap: 40px !important;
@@ -1655,13 +1746,23 @@
         }
 
         .courses-three__carousel .item:first-child .courses-three__quote-text {
+            color: #24352e;
             font-size: 20px;
             line-height: 1.55;
         }
 
         .courses-three__carousel .item:first-child .courses-three__quote-author {
+            color: #1f6b5c;
             font-size: 18px;
             margin-top: 8px;
+        }
+
+        .courses-three__carousel .item:first-child .courses-three__content {
+            background: #f7faf5;
+            border-left: 4px solid #e1c88e;
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(8, 28, 22, .14);
+            padding: 28px 32px;
         }
 
         .courses-three__img-box {
@@ -1721,6 +1822,15 @@
             .courses-three__carousel .item:first-child .courses-three__quote-text {
                 font-size: 17px;
             }
+
+            .courses-three .inspiration-panel {
+                padding: 28px 20px 32px;
+            }
+
+            .about-new__trip-box {
+                align-items: flex-start;
+                flex-direction: column;
+            }
         }
 
         .about-new__right {
@@ -1729,6 +1839,7 @@
 
         .services-three {
             background-color: #E9E2D3 !important;
+            padding-top: 85px;
         }
 
         .prevent-stat-box {
@@ -1740,6 +1851,13 @@
             margin-bottom: 30px;
             box-shadow: 0 20px 35px rgba(15, 38, 34, 0.28);
             overflow: hidden;
+            transition: transform 300ms ease, box-shadow 300ms ease;
+            will-change: transform;
+        }
+
+        .prevent-stat-box:hover {
+            box-shadow: 0 28px 48px rgba(15, 38, 34, 0.4);
+            transform: translateY(-10px);
         }
 
         .prevent-stat-box__icon {
@@ -1749,6 +1867,11 @@
             width: 46px;
             height: 46px;
             opacity: 0.9;
+            transition: transform 300ms ease;
+        }
+
+        .prevent-stat-box:hover .prevent-stat-box__icon {
+            transform: scale(1.12) rotate(6deg);
         }
 
         .prevent-stat-box__icon svg {
@@ -1799,6 +1922,13 @@
             line-height: 27px;
             margin-bottom: 0;
             text-transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .prevent-stat-box,
+            .prevent-stat-box__icon {
+                transition: none;
+            }
         }
 
     </style>
@@ -2143,54 +2273,31 @@
                                     
                             </div>
                             <div class="about-new__content">
-                                <p class="about-new__text">We are dedicated to reaching those who are often 
-                                    overlooked and ensuring that no child or family is left behind. Our efforts 
-                                    focus on addressing immediate needs while also creating long-term opportunities
-                                    for growth, independence, and dignity.
-
-                                    We believe that true change begins with compassion, but lasting impact is created 
-                                    through commitment, collaboration, and consistent action. Every contribution, whether 
-                                    big or small, helps us reach more people and create meaningful opportunities for a 
-                                    brighter future.
-
-                                    We work closely with communities to understand their needs, strengthen local resources, 
-                                    and develop solutions that can make a sustainable difference. By investing in people today, 
-                                    we aim to create stronger families, empowered communities, and a better tomorrow.
-
-                                    Our vision is a world where every child has the opportunity to receive an education, 
-                                    access basic healthcare, live in a safe environment, and grow with hope and confidence. 
-                                    Together, we can make a difference that goes beyond today and continues to inspire future generations.
-
-                                </p>
+                                <div class="about-new__impact-image">
+                                    <img src="assets/images/resources/handwashing_extracted.jpg" alt="Child washing hands">
+                                </div>
                                 <div class="about-new__features">
                                     <div class="about-new__feature">
                                         <div class="about-new__feature-icon">
                                             <span class="icon-education-cap"></span>
                                         </div>
                                         <h4 class="about-new__feature-title">Education</h4>
-                                        <p class="about-new__feature-text">Creating opportunities for communities 
-                                            to access education on the importance of clean hygiene</p>
+                                        <p class="about-new__feature-text">Creating opportunities for communities to access education on the importance of clean hygiene.</p>
                                     </div>
-                                    <!--<div class="about-new__feature">
-                                        <div class="about-new__feature-icon">
-                                            <span class="icon-clean-water"></span>
-                                        </div>
-                                        <h4 class="about-new__feature-title">Clean Water</h4>
-                                        <p class="about-new__feature-text">Helping communities access safe,
-                                            clean, and reliable drinking water for a healthier life.</p>
-                                    </div>-->
                                     <div class="about-new__feature">
                                         <div class="about-new__feature-icon about-new__feature-icon--shoe">
                                             <svg viewBox="0 0 48 48" aria-hidden="true">
-                                                <circle cx="14" cy="10" r="4" />
-                                                <path d="M7.5 25V19c0-3.2 2.6-5.8 5.8-5.8h1.4c3.2 0 5.8 2.6 5.8 5.8v6M10 18v7M17 18v7M14 14v5" />
                                                 <path d="M22 31c4.1-.4 7.4-2 9.7-4.9l2.3-2.9 3.9 2.2c2.3 1.3 4.8 2.2 7.4 2.6l.8.1c1.3.2 2.2 1.4 1.9 2.7-.2 1.1-1.2 1.9-2.4 1.9H23.6c-1.1 0-1.9-.9-1.6-1.7Z" />
                                                 <path d="M32.4 26.1c1.4 1.5 3.1 2.6 5.1 3.2M34.8 24.8l-1.3 2M38 26.3l-.9 1.8M41 27.2l-.6 1.5" />
                                             </svg>
                                         </div>
                                         <h4 class="about-new__feature-title">Footwear</h4>
-                                        <p class="about-new__feature-text">Helping communities access proper footwear for a healthier and sustainable life</p>
+                                        <p class="about-new__feature-text">Helping communities access proper footwear for a healthier and sustainable life.</p>
                                     </div>
+                                </div>
+                                <div class="about-new__trip-box">
+                                    <p class="about-new__trip-text">Learn more about our 2025 Ghana Trip</p>
+                                    <a class="about-new__trip-button" href="ghana%20trip.html">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -2244,7 +2351,7 @@
             <div class="courses-three__shape-1 float-bob-x">
                 <img src="assets/images/shapes/courses-three-shape-1.png" alt="">
             </div>
-            <div class="container">
+            <div class="container inspiration-panel">
                 <div class="section-title text-center sec-title-animation animation-style2">
                     <h2 class="section-title__title title-animation">Our Inspiration</h2>
                 </div>
@@ -2972,6 +3079,11 @@
                         <p class="upcoming-event-details__label">Event</p>
                         <p class="upcoming-event-details__value">North Texas Giving Day</p>
                     </div>
+                    <div class="upcoming-event-details__row">
+                        <span class="upcoming-event-details__icon icon-clock" aria-hidden="true"></span>
+                        <p class="upcoming-event-details__label">Date </p>
+                        <p class="upcoming-event-details__value">September 17th </p>
+                    </div>
                 </div>
             </div>
             <div class="upcoming-event-cards">
@@ -2986,10 +3098,10 @@
                     <p class="upcoming-event-card__text">Join us at an upcoming event and help bring protection, confidence, and opportunity to more children.</p>
                 </article>
             </div>
-            <div class="partners-donation-callout">
+            <!--<div class="partners-donation-callout">
                 <p class="partners-donation-callout__text">Please donate to Healthier Soles on September 17th!</p>
                     <a class="partners-donation-callout__button" href="https://givebutter.com/healthier-soles-2026-pjdwfd">Donate Now</a>
-            </div>
+            </div>-->
             <div class="container">
                 <div class="project-one__carousel owl-theme owl-carousel project-one__carousel--hidden">
                     <!--Project One Single Start-->
@@ -3490,7 +3602,7 @@
             <div class="container">
                 <div class="donation-panel__inner">
                     <div class="donation-panel__image">
-                        <img src="assets/images/resources/Copy of seth-doyle-zf9_yiAekJs-unsplash.jpg" alt="Community supported by Healthier Soles">
+                        <img src="assets/images/resources/WhatsApp Image 2026-09-12.jpeg" alt="Community supported by Healthier Soles">
                     </div>
                     <div class="donation-panel__content donation-panel__content--cta">
                         <h2>Together, We Can<br><span>Create Lasting Change.</span></h2>
@@ -3503,7 +3615,7 @@
                                     <path d="M12 20.5s-7.5-4.6-10-9.2C.3 8 1.6 4.5 5 3.6c2.2-.6 4.3.3 5.4 2.1L12 7.6l1.6-1.9c1.1-1.8 3.2-2.7 5.4-2.1 3.4.9 4.7 4.4 3 7.7-2.5 4.6-10 9.2-10 9.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
                                 </svg>
                             </a>
-                            <a href="#contact" class="outline">Join Team
+                            <a href="join%20our%20team.html" class="outline">Join Team
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5" />
                                     <circle cx="16" cy="9" r="2.1" stroke="currentColor" stroke-width="1.5" />
@@ -3933,6 +4045,7 @@
                                             <span>Healthier Soles</span>
                                         </a>
                                     </div>
+                                    <a class="footer-email" href="mailto:info@healthiersoles.org"><i class="icon-mail" aria-hidden="true"></i><span>info@healthiersoles.org</span></a>
                                     
                                     <div class="site-footer__social">
                                         <a href="#"><i class="icon-facebook"></i></a>
@@ -3950,8 +4063,8 @@
                                         <li><a href="#home">Home</a></li>
                                         <li><a href="story.html">Our Story</a></li>
                                         <li><a href="#our-cause">Our Cause</a></li>
-                                        <li><a href="#our-partners">Our Partners</a></li>
-                                        <li><a href="#our-events">Our Events</a></li>
+                                        <li><a href="partners.html">Our Partners</a></li>
+                                        <li><a href="events.html">Our Events</a></li>
                                     </ul>
                                 </div>
                             </div>

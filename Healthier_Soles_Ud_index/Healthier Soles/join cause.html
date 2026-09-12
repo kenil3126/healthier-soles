@@ -67,12 +67,14 @@
             padding: 0;
             overflow: hidden;
             background-color: #0a2315;
+            aspect-ratio: 16 / 7;
         }
 
         .page-header__full-img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .page-header__overlay {
@@ -100,7 +102,7 @@
         .page-header h2 {
             color: #000000;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: clamp(38px, 5vw, 64px);
+            font-size: 52px;
             font-style: italic;
             font-weight: 400;
             text-shadow: 0 3px 16px rgba(0, 0, 0, 0.38);
@@ -200,10 +202,17 @@
             background: #4caf50;
             border-radius: 32px;
             color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Sora', sans-serif;
             font-size: 15px;
+            min-height: 64px;
+            margin-top: auto;
             padding: 16px 34px;
             text-decoration: none;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .join-options__button:hover {
@@ -380,9 +389,17 @@
         .site-footer-three .footer-widget__services,
         .site-footer-three .site-footer__bottom { display: none !important; }
         .site-footer-three .footer-widget__about .site-footer__social { margin-top: 28px; }
+        .site-footer-three .footer-email { align-items: center; color: rgba(255,255,255,.82); display: flex; font-size: 14px; gap: 8px; margin-top: 18px; text-decoration: none; }
+        .site-footer-three .footer-email:hover { color: #f5a623; }
+        .site-footer__social a:has(.icon-facebook),
+        .site-footer__social a:has(.icon-twitter),
+        .site-footer__social a:has(.icon-youtube) { display: none !important; }
+        .site-footer-three .site-footer__top-inner { padding-top: 80px; }
+
+
         .site-footer-three .footer-widget__about-text { display: none !important; }
         .site-footer-three .footer-widget__links { transform: translate(150px, -10px); }
-        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 22px auto 0; max-width: 1120px; padding: 22px 24px 0; text-align: left; white-space: pre-line; }
+        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 8px auto 0; max-width: 1120px; padding: 8px 24px 0; text-align: left; white-space: pre-line; }
 
         .site-footer-three__shape-1 {
             display: none !important;
@@ -612,12 +629,12 @@
 
         <!--Page Header Start-->
         <section class="page-header page-header--full-img">
-            <img class="page-header__full-img" src="assets/images/resources/IMG_1032.jpg" alt="Join Cause - Healthier Soles">
+            <img class="page-header__full-img" src="assets/images/resources/afa46eba-b1ba-43c2-b15f-d1b13a8cab18.png" alt="Join Cause - Healthier Soles">
             <div class="page-header__overlay"></div>
             <div class="container">
-                <div class="page-header__inner">
+                <!--<div class="page-header__inner">
                     <h2>Join Cause</h2>
-                </div>
+                </div>-->
             </div>
         </section>
         <!--Page Header End-->
@@ -1042,7 +1059,7 @@
                 <div class="join-options__grid">
                     <article class="join-options__card">
                         <h2 class="join-options__title">Donate Now</h2>
-                        <p class="join-options__text">Every gift funds shoes, logistics, and mission trips for kids who need them most.</p>
+                        <p class="join-options__text">Every gift funds shoes and mission trips for kids who need them most.</p>
                         <a class="join-options__button" href="https://givebutter.com/healthier-soles-2026-pjdwfd">Donate Now</a>
                     </article>
                     <article class="join-options__card">
@@ -1105,7 +1122,7 @@
                                     <div class="site-footer__social">
                                         <a href="#"><i class="icon-facebook"></i></a>
                                         <a href="#"><i class="icon-twitter"></i></a>
-                                        <a href="#"><i class="icon-instagram"></i></a>
+                                        <a href="https://www.instagram.com/healthiersolesorg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="icon-instagram"></i></a>
                                         <a href="#"><i class="icon-youtube"></i></a>
                                     </div>
                                 </div>
@@ -1185,7 +1202,7 @@
         <footer class="site-footer site-footer-three" id="contact">
             <div class="site-footer-three__bg" style="background-image: url(assets/images/backgrounds/site-footer-three-bg.jpg);"></div>
             <div class="site-footer__top"><div class="container"><div class="site-footer__top-inner"><div class="row">
-                <div class="col-xl-5 col-lg-4 col-md-6"><div class="footer-widget__about"><div class="footer-widget__about-logo footer-widget__about-logo--brand"><a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a></div><p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p><div class="site-footer__social"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-instagram"></i></a><a href="#"><i class="icon-youtube"></i></a></div></div></div>
+                <div class="col-xl-5 col-lg-4 col-md-6"><div class="footer-widget__about"><div class="footer-widget__about-logo footer-widget__about-logo--brand"><a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a></div><a class="footer-email" href="mailto:info@healthiersoles.org"><i class="icon-mail" aria-hidden="true"></i><span>info@healthiersoles.org</span></a><p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p><div class="site-footer__social"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="https://www.instagram.com/healthiersolesorg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="icon-instagram"></i></a><a href="#"><i class="icon-youtube"></i></a></div></div></div>
                 <div class="col-xl-4 col-lg-4 col-md-6"><div class="footer-widget__links"><h4 class="footer-widget__title">Quick links</h4><ul class="footer-widget__links-list list-unstyled"><li><a href="index.html#home">Home</a></li><li><a href="story.html">Our Story</a></li><li><a href="cause.html">Our Cause</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="events.html">Our Events</a></li></ul></div></div>
                 <div class="col-xl-3 col-lg-4 col-md-6"><div class="footer-widget__services"><h4 class="footer-widget__title">Services</h4><ul class="footer-widget__links-list list-unstyled"><li><a href="about.html">Emergency Relief</a></li><li><a href="about.html">Medical Outreach</a></li><li><a href="about.html">Educational Support</a></li><li><a href="about.html">Mental Health</a></li><li><a href="about.html">Community Development</a></li></ul></div></div>
             </div></div></div></div>

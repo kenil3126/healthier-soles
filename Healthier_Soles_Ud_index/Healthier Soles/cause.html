@@ -90,9 +90,17 @@
         .site-footer-three .footer-widget__services,
         .site-footer-three .site-footer__bottom { display: none !important; }
         .site-footer-three .footer-widget__about .site-footer__social { margin-top: 28px; }
+        .site-footer-three .footer-email { align-items: center; color: rgba(255,255,255,.82); display: flex; font-size: 14px; gap: 8px; margin-top: 18px; text-decoration: none; }
+        .site-footer-three .footer-email:hover { color: #f5a623; }
+        .site-footer__social a:has(.icon-facebook),
+        .site-footer__social a:has(.icon-twitter),
+        .site-footer__social a:has(.icon-youtube) { display: none !important; }
+        .site-footer-three .site-footer__top-inner { padding-top: 80px; }
+
+
         .site-footer-three .footer-widget__about-text { display: none !important; }
         .site-footer-three .footer-widget__links { transform: translate(150px, -10px); }
-        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 22px auto 0; max-width: 1120px; padding: 22px 24px 0; text-align: left; white-space: pre-line; }
+        .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 8px auto 0; max-width: 1120px; padding: 8px 24px 0; text-align: left; white-space: pre-line; }
 
         .site-footer-three__shape-1 {
             display: none !important;
@@ -255,12 +263,14 @@
             padding: 0;
             overflow: hidden;
             background-color: #0a1812;
+            aspect-ratio: 16 / 7;
         }
 
         .page-header__full-img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .page-header__overlay {
@@ -282,7 +292,7 @@
         .page-header h2 {
             color: #ffffff;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: clamp(15px, 3.6vw, 52px);
+            font-size: 52px;
             font-style: italic;
             font-weight: 400;
             letter-spacing: 0;
@@ -530,8 +540,9 @@
         }
 
         .welfare-section__visual img {
+            aspect-ratio: 3 / 2;
             display: block;
-            height: 560px;
+            height: auto;
             object-fit: cover;
             object-position: center;
             transition: transform 700ms cubic-bezier(.2, .8, .2, 1), filter 700ms ease;
@@ -816,7 +827,7 @@
 
         <!--Page Header Start-->
         <section class="page-header page-header--full-img">
-            <img class="page-header__full-img" src="assets/images/resources/shoes (1).jpg" alt="Our Cause - Healthier Soles">
+            <img class="page-header__full-img" src="assets/images/resources/shoes_circle_16x7.jpg" alt="Our Cause - Healthier Soles">
             <div class="page-header__overlay"></div>
             <div class="container">
                 <div class="page-header__inner">
@@ -1173,7 +1184,7 @@
                         <a class="tomorrow-cta__button tomorrow-cta__button--solid" href="https://givebutter.com/healthier-soles-2026-pjdwfd">Donate Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20.5s-7.5-4.6-10-9.2C.3 8 1.6 4.5 5 3.6c2.2-.6 4.3.3 5.4 2.1L12 7.6l1.6-1.9c1.1-1.8 3.2-2.7 5.4-2.1 3.4.9 4.7 4.4 3 7.7-2.5 4.6-10 9.2-10 9.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
                         </a>
-                        <a class="tomorrow-cta__button tomorrow-cta__button--outline" href="index.html#join-our-cause">Join Team
+                        <a class="tomorrow-cta__button tomorrow-cta__button--outline" href="join%20our%20team.html">Join Team
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5" /><circle cx="16" cy="9" r="2.1" stroke="currentColor" stroke-width="1.5" /><path d="M2.8 19c0-3 2.6-5.2 5.7-5.2s5.7 2.2 5.7 5.2M14.8 14.3c2.6.3 4.6 2.3 4.6 4.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
                         </a>
                     </div>
@@ -1194,6 +1205,7 @@
                                     <div class="footer-widget__about-logo footer-widget__about-logo--brand">
                                         <a href="index.html"><img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles"><span>Healthier Soles</span></a>
                                     </div>
+                                    <a class="footer-email" href="mailto:info@healthiersoles.org"><i class="icon-mail" aria-hidden="true"></i><span>info@healthiersoles.org</span></a>
                                     <p class="footer-widget__about-text">Charity and donation is category that<br> involves giving.</p>
                                     <div class="site-footer__social">
                                         <a href="#"><i class="icon-facebook"></i></a>
@@ -1210,8 +1222,8 @@
                                         <li><a href="index.html#home">Home</a></li>
                                         <li><a href="story.html">Our Story</a></li>
                                         <li><a href="cause.html">Our Cause</a></li>
-                                        <li><a href="index.html#our-partners">Our Partners</a></li>
-                                        <li><a href="index.html#our-events">Our Events</a></li>
+                                        <li><a href="partners.html">Our Partners</a></li>
+                                        <li><a href="events.html">Our Events</a></li>
                                     </ul>
                                 </div>
                             </div>
