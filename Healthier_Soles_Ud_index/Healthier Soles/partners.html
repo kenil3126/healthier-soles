@@ -90,6 +90,7 @@
 
         .site-footer-three .footer-widget__services,
         .site-footer-three .site-footer__bottom { display: none !important; }
+        .site-footer-three .footer-widget__about { transform: translateY(-22px); }
         .site-footer-three .footer-widget__about .site-footer__social { margin-top: 28px; }
         .site-footer-three .footer-email { align-items: center; color: rgba(255,255,255,.82); display: flex; font-size: 14px; gap: 8px; margin-top: 18px; text-decoration: none; }
         .site-footer-three .footer-email:hover { color: #f5a623; }
@@ -100,19 +101,41 @@
 
 
         .site-footer-three .footer-widget__about-text { display: none !important; }
-        .site-footer-three .footer-widget__links { transform: translate(150px, -10px); }
+        .site-footer-three .footer-widget__links { transform: translate(150px, -25px); }
         .site-footer-three::after { color: rgba(255,255,255,.72); content: "Terms & Conditions\A By using our website, you agree to use our services responsibly and follow applicable laws. Website content may not be copied or used without permission.\A\A Privacy Policy\A We respect your privacy and protect your personal information. Your information is used only to provide services, respond to inquiries, and improve our website.\A\A © 2026 All Rights Reserved."; display: block; font-size: 12px; line-height: 1.7; margin: 8px auto 0; max-width: 1120px; padding: 8px 24px 0; text-align: left; white-space: pre-line; }
 
         .site-footer-three__shape-1 {
             display: none !important;
         }
 
+        body,
+        .page-wrapper { background-color: #121d18 !important; margin-bottom: 0; }
+        .site-footer-three .site-footer__top-inner { padding: 55px 0 20px !important; }
+        .site-footer-three .footer-widget__about { transform: translateY(-22px); }
+        .site-footer-three .footer-widget__links { transform: translate(150px, -25px); }
+        .site-footer-three .footer-widget__about .site-footer__social { margin-top: 18px; }
+        .site-footer-three .footer-email { margin-top: 12px; }
+        .site-footer-three::after { margin-top: 8px !important; padding-top: 8px !important; }
+        .site-footer-three .site-footer__top-inner { padding-bottom: 10px !important; }
+        .site-footer-three::after { border-top: 1px solid rgba(255, 255, 255, .12); margin-top: 0 !important; padding-top: 4px !important; }
+        .site-footer__legal-note { margin-top: 0; padding-top: 4px; }
+
         .site-footer__middle {
             display: none !important;
         }
 
         body {
+            background-color: #121d18;
+            margin-bottom: 0;
             padding-top: 84px;
+        }
+
+        .site-footer-three {
+            margin-bottom: 0;
+        }
+
+        .page-wrapper {
+            background-color: #f7f3e9 !important;
         }
 
         .newsletter-one__title {
@@ -343,6 +366,10 @@
             transform: translateY(-3px);
         }
 
+        .partners-support + .partners-cta {
+            transform: translateY(-25px);
+        }
+
         .partners-intro {
             color: rgba(255, 255, 255, 0.92);
             font-family: 'Sora', sans-serif;
@@ -359,7 +386,11 @@
 
         .partners-grid {
             background: #f7f3e9;
-            padding: 82px 0 100px;
+            padding: 82px 0 30px;
+        }
+
+        .partners-grid .partners-cta {
+            margin-bottom: 24px;
         }
 
         .partners-grid__items {
@@ -541,6 +572,7 @@
 
         .partners-support {
             background: #f4f8f1;
+            padding-top: 42px;
         }
 
         .partners-transparency {
@@ -597,15 +629,22 @@
         .newsletter-one__title {
             color: #ffffff;
             font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(34px, 4vw, 46px);
+            font-weight: 700;
             line-height: 1.15;
+            margin-bottom: 14px;
+            text-transform: none !important;
         }
 
         .newsletter-one__text {
             color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            line-height: 1.6;
             margin-left: auto;
             margin-right: auto;
             max-width: 720px;
             text-align: center;
+            text-transform: none !important;
         }
 
         .tomorrow-cta__buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
@@ -823,7 +862,7 @@
              <div class="partners-cta">
             <a class="partners-cta__button" href="join%20cause.html">Become Our Partner
             </a>
-        </div
+        </div>
         </section>
 
         <section class="partners-support">
@@ -1006,6 +1045,9 @@
         <!--Site Footer Three Start-->
         <footer class="site-footer site-footer-three" id="contact">
             <div class="site-footer-three__bg" style="background-image: url(assets/images/backgrounds/site-footer-three-bg.jpg);"></div>
+            <div class="site-footer-three__shape-1 float-bob-y">
+                <img src="assets/images/shapes/site-footer-three-shape-1.png" alt="">
+            </div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="site-footer__top-inner">

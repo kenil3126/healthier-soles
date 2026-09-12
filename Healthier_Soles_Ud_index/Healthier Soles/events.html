@@ -109,6 +109,18 @@
             display: none !important;
         }
 
+        body,
+        .page-wrapper { background-color: #121d18 !important; margin-bottom: 0; }
+        .site-footer-three .site-footer__top-inner { padding: 55px 0 20px !important; }
+        .site-footer-three .footer-widget__about { transform: translateY(-22px); }
+        .site-footer-three .footer-widget__links { transform: translate(150px, -25px); }
+        .site-footer-three .footer-widget__about .site-footer__social { margin-top: 18px; }
+        .site-footer-three .footer-email { margin-top: 12px; }
+        .site-footer-three::after { margin-top: 8px !important; padding-top: 8px !important; }
+        .site-footer-three .site-footer__top-inner { padding-bottom: 10px !important; }
+        .site-footer-three::after { border-top: 1px solid rgba(255, 255, 255, .12); margin-top: 0 !important; padding-top: 4px !important; }
+        .site-footer__legal-note { margin-top: 0; padding-top: 4px; }
+
         .site-footer__middle {
             display: none !important;
         }
@@ -370,8 +382,13 @@
         }
 
         .events-details .container {
+            background: #fffdf8;
+            border: 1px solid #e2d9c8;
+            border-radius: 22px;
+            box-shadow: 0 18px 40px rgba(24, 42, 33, .1);
             display: block;
             max-width: 1180px;
+            padding: 30px;
         }
 
         .events-details__meta {
@@ -381,8 +398,8 @@
         }
 
         .events-details__item {
-            background: #ffffff;
-            border: 1px solid #e2d9c8;
+            background: #e8f3ed;
+            border: 1px solid #c9dfd2;
             border-radius: 12px;
             min-height: 190px;
             padding: 28px 24px;
@@ -391,6 +408,7 @@
         }
 
         .events-details__item:hover {
+            background: #ffffff;
             border-color: #1f7868;
             box-shadow: 0 14px 28px rgba(31, 120, 104, .14);
             transform: translateY(-5px);
@@ -504,6 +522,7 @@
             .events-details .container {
                 gap: 44px;
                 grid-template-columns: 1fr;
+                padding: 20px;
             }
 
             .events-details__date {
@@ -910,7 +929,7 @@
 
         .events-live {
             background: #f5f2e9;
-            padding: 48px 0 90px;
+            padding: 24px 0 90px;
         }
 
         .events-live .events-summary,
@@ -1060,7 +1079,12 @@
             grid-row: span 2;
         }
 
+        .event-story-grid .event-story:nth-child(3) {
+            border: 0;
+        }
+
         .event-story--empty {
+            display: none;
             min-height: 0;
             padding: 0;
         }

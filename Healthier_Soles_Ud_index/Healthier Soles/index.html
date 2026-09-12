@@ -69,7 +69,7 @@
         }
 
                 .site-footer-three .site-footer__top-inner {
-                    padding-top: 80px;
+                    padding: 55px 0 20px;
                 }
         .hs-header {
             position: fixed;
@@ -213,6 +213,18 @@
             display: none !important;
         }
 
+        .site-footer-three .site-footer__top-inner {
+            padding-bottom: 10px !important;
+        }
+
+        .site-footer__legal-note {
+            margin-top: 0;
+            padding-top: 4px;
+        }
+
+        body,
+        .page-wrapper { background-color: #121d18 !important; margin-bottom: 0; }
+
         .site-footer-three .footer-widget__about {
             transform: translateY(-22px);
         }
@@ -222,7 +234,7 @@
         }
 
         .site-footer-three .footer-widget__about .site-footer__social {
-            margin-top: 28px;
+            margin-top: 18px;
         }
 
         .site-footer-three .footer-email {
@@ -231,7 +243,7 @@
             display: flex;
             font-size: 14px;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 12px;
             text-decoration: none;
         }
 
@@ -600,6 +612,10 @@
             padding-bottom: 40px;
         }
 
+        .about-three {
+            background-color: #f7f5ef;
+        }
+
         .about-three .row.align-items-center {
             align-items: flex-start !important;
         }
@@ -631,11 +647,83 @@
         }
 
         .project-one__bg-color {
-            display: none;
+            background-color: #f7f5ef !important;
+            display: none !important;
+        }
+
+        .project-one__shoe-watermark {
+            display: none !important;
+        }
+
+        .project-one::before,
+        .project-one::after,
+        .project-one .container::before,
+        .project-one .container::after {
+            display: none !important;
         }
 
         .project-one {
-            padding-top: 35px;
+            background: #f7f5ef !important;
+            background-image: none !important;
+            display: flex !important;
+            flex-direction: column;
+            padding-top: 12px;
+        }
+
+        .project-one > .section-title {
+            order: 1;
+        }
+
+        .project-one > .upcoming-event-cards {
+            display: grid !important;
+            order: 2;
+        }
+
+        .project-one > .upcoming-event-details {
+            order: 3;
+        }
+
+        .inspiration-events {
+            display: none !important;
+        }
+
+        .process-one {
+            background: #f7f5ef !important;
+            background-image: none !important;
+        }
+
+        #our-partners {
+            background: #f7f5ef !important;
+            background-image: none !important;
+        }
+
+        .project-one,
+        .process-one,
+        #our-partners {
+            background-color: #f7f5ef !important;
+        }
+
+        .upcoming-event-cards {
+            margin-bottom: 0;
+        }
+
+        .inspiration-events {
+            background: #f7f5ef;
+            padding: 0 0 70px;
+        }
+
+        .inspiration-events__title {
+            color: #16241f;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(30px, 4vw, 48px);
+            margin: 0 0 28px;
+            text-align: center;
+        }
+
+        .courses-three {
+            background-color: #f7f5ef;
+            padding-top: 70px;
+            padding-bottom: 70px;
         }
 
         .project-one .section-title__title {
@@ -3019,6 +3107,60 @@
             </div>
         </section>
         <!--Courses Three End -->
+
+        <section class="inspiration-events">
+            <div class="container">
+                <h2 class="inspiration-events__title">Upcoming Events</h2>
+                <div class="upcoming-event-details">
+                    <div class="upcoming-event-details__box">
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-calendar" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Event</p>
+                            <p class="upcoming-event-details__value">Young Entrepreneurs Summit</p>
+                        </div>
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-clock" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Date &amp; Time</p>
+                            <p class="upcoming-event-details__value">September 12th - 4 to 9pm</p>
+                        </div>
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-location" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Location</p>
+                            <p class="upcoming-event-details__value">Southlake Town Square, Southlake TX</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-event-details__box">
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-calendar" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Event</p>
+                            <p class="upcoming-event-details__value">Community Connect</p>
+                        </div>
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-clock" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Date &amp; Time</p>
+                            <p class="upcoming-event-details__value">September 19th - 5 to 8pm</p>
+                        </div>
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-location" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Location</p>
+                            <p class="upcoming-event-details__value">Westin Southlake, Southlake, TX</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-event-details__box">
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-calendar" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Event</p>
+                            <p class="upcoming-event-details__value">North Texas Giving Day</p>
+                        </div>
+                        <div class="upcoming-event-details__row">
+                            <span class="upcoming-event-details__icon icon-clock" aria-hidden="true"></span>
+                            <p class="upcoming-event-details__label">Date</p>
+                            <p class="upcoming-event-details__value">September 17th</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!--Project One Start -->
         <section class="project-one">
