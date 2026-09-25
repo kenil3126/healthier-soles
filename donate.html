@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate || Healthier Soles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13231c;
+    --paper:#f5f1e7;
+    --card:#ffffff;
+    --green:#4caf50;
+    --green-deep:#43a047;
+    --orange:#f5a623;
+    --muted:#6b6a5f;
+    --line:#e6e0d2;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    font-family:'Sora',sans-serif;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---- Hero ---- */
+  .hero{
+    background:var(--ink);
+    padding:8px 0 0;
+  }
+  .hero__inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px 24px;
+  }
+  .hero__title-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .hero__logo{ width:58px; height:58px; object-fit:contain; flex-shrink:0; }
+  .hero__title{
+    color:#fff;
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:clamp(30px,4.4vw,46px);
+    font-weight:700;
+    line-height:1.2;
+    margin:0;
+  }
+  .hero__org{
+    color:#cfd8d1;
+    font-size:14.5px;
+    margin:0 0 30px;
+  }
+  .hero__org a{
+    color:var(--orange);
+    text-decoration:none;
+    font-weight:600;
+  }
+  .hero__cover{
+    width:100%;
+    aspect-ratio:16/7;
+    object-fit:cover;
+    border-radius:16px;
+    background:#0e1a14;
+  }
+
+  /* ---- Body layout ---- */
+  .layout{
+    max-width:1120px;
+    margin:0 auto;
+    padding:70px 24px 90px;
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  .story h2{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:26px;
+    font-weight:700;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  .story p{
+    font-size:15.5px;
+    line-height:1.75;
+    color:#3c4a41;
+    margin:0 0 18px;
+  }
+  .story p strong{ color:var(--ink); }
+
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin:34px 0 40px;
+  }
+  .stats .stat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 16px;
+    text-align:center;
+  }
+  .stats .stat .num{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:22px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .stats .stat .lbl{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:6px;
+    line-height:1.5;
+  }
+
+  .money-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .money-list li{
+    display:flex;
+    gap:16px;
+    align-items:baseline;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .money-list li:last-child{ border-bottom:1px solid var(--line); }
+  .money-list .pct{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:700;
+    color:var(--green-deep);
+    width:60px;
+    flex-shrink:0;
+  }
+  .money-list .desc{
+    font-size:14.5px;
+    line-height:1.65;
+    color:#4b4a42;
+  }
+
+  /* ---- Sticky donate card ---- */
+  .donate-card{
+    position:sticky;
+    top:24px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:30px 26px;
+    box-shadow:0 20px 45px rgba(19,35,28,0.08);
+  }
+  .donate-card__raised{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:30px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .donate-card__raised span{
+    display:block;
+    font-family:'Sora',sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .donate-card__bar{
+    height:8px;
+    border-radius:6px;
+    background:#eee7d6;
+    margin:16px 0 6px;
+    overflow:hidden;
+  }
+  .donate-card__bar-fill{
+    height:100%;
+    width:60%;
+    background:var(--green);
+    border-radius:6px;
+  }
+  .donate-card__goal{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0 0 22px;
+  }
+  .donate-card .btn{
+    border-radius:30px;
+    display:block;
+    font-family:'Sora',sans-serif;
+    font-weight:600;
+    width:100%;
+    padding:15px 0;
+    font-size:15.5px;
+    margin-bottom:12px;
+    text-align:center;
+    text-decoration:none;
+    transition:background 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+  .donate-card .btn:hover{
+    transform:translateY(-2px);
+  }
+  .donate-card .btn-solid{
+    background:var(--green);
+    color:#fff;
+  }
+  .donate-card .btn-solid:hover{
+    background:var(--green-deep);
+  }
+  .donate-card__note{
+    font-size:12px;
+    color:var(--muted);
+    text-align:center;
+    margin:16px 0 0;
+  }
+
+  @media (max-width:820px){
+    .layout{ grid-template-columns:1fr; }
+    .donate-card{ position:static; }
+    .stats{ grid-template-columns:1fr 1fr; }
+  }
+
+  /* ---- Donate modal ---- */
+  .gb-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,20,17,.55);
+    z-index:2000;
+    align-items:flex-start;
+    justify-content:center;
+    padding:40px 16px;
+    overflow-y:auto;
+  }
+  .gb-overlay.open{ display:flex; }
+
+  .gb-modal{
+    background:#fff;
+    border-radius:18px;
+    width:100%;
+    max-width:460px;
+    padding:32px 30px 28px;
+    box-shadow:0 30px 70px rgba(0,0,0,.35);
+    font-family:'Sora',sans-serif;
+  }
+
+  .gb-modal__head{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    margin-bottom:24px;
+  }
+  .gb-modal__head h3{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:20px;
+    font-weight:600;
+    color:#111;
+    margin:0;
+  }
+  .gb-modal__head svg.shield{ width:22px; height:22px; }
+  .gb-modal__close{
+    position:absolute;
+    right:0;
+    top:0;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:4px;
+    line-height:0;
+    color:#111;
+  }
+  .gb-modal__close svg{ width:20px; height:20px; }
+
+  .gb-tabs{
+    display:flex;
+    background:#f2f2f4;
+    border-radius:10px;
+    padding:4px;
+    gap:4px;
+    margin-bottom:22px;
+  }
+  .gb-tab{
+    flex:1;
+    border:none;
+    background:transparent;
+    border-radius:8px;
+    padding:12px 0;
+    font-family:'Sora',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#444;
+    cursor:pointer;
+    border:1.5px solid transparent;
+  }
+  .gb-tab.active{
+    background:#eef1ff;
+    border-color:#4f5fee;
+    color:#111;
+  }
+
+  .gb-amounts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .gb-amount-btn{
+    background:#f2f2f4;
+    border:1.5px solid transparent;
+    border-radius:10px;
+    padding:16px 0;
+    font-family:'Sora',sans-serif;
+    font-size:17px;
+    font-weight:600;
+    color:#111;
+    cursor:pointer;
+  }
+  .gb-amount-btn.active{
+    background:#eef1ff;
+    border-color:#4f5fee;
+  }
+
+  .gb-custom-row{
+    display:flex;
+    align-items:center;
+    background:#f2f2f4;
+    border-radius:10px;
+    padding:14px 18px;
+    margin-bottom:22px;
+    gap:8px;
+  }
+  .gb-custom-row .sym{
+    font-size:19px;
+    color:#333;
+    font-weight:500;
+  }
+  .gb-custom-row input{
+    border:none;
+    background:transparent;
+    outline:none;
+    font-family:'Sora',sans-serif;
+    font-size:19px;
+    font-weight:600;
+    color:#111;
+    flex:1;
+    min-width:0;
+  }
+  .gb-custom-row .cur{
+    font-size:14px;
+    color:#777;
+    font-weight:500;
+  }
+
+  .gb-field-label{
+    font-size:14.5px;
+    font-weight:600;
+    color:#111;
+    margin-bottom:10px;
+  }
+  .gb-select{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1.5px solid #e2e2e5;
+    border-radius:10px;
+    padding:14px 16px;
+    color:#999;
+    font-family:'Sora',sans-serif;
+    font-size:15px;
+    margin-bottom:26px;
+    cursor:pointer;
+  }
+  .gb-select svg{ width:16px; height:16px; color:#999; }
+
+  .gb-continue{
+    display:block;
+    width:100%;
+    background:#4f5fee;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:17px 0;
+    font-family:'Sora',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:background 200ms ease;
+  }
+  .gb-continue:hover{ background:#3d4de0; }
+  .gb-bank-step{ display:none; }
+  .gb-bank-step.is-visible{ display:block; }
+  .gb-bank-step__amount{
+    background:#f2f2f4;
+    border-radius:10px;
+    color:#111;
+    font-size:16px;
+    font-weight:600;
+    margin:0 0 18px;
+    padding:14px 16px;
+  }
+  .gb-bank-step__title{ color:#111; font-size:20px; margin:0 0 10px; }
+  .gb-bank-step__text{ color:#666; font-size:14px; line-height:1.6; margin:0 0 20px; }
+  .gb-bank-step__secure{
+    border:1px solid #dfe3ed;
+    border-radius:10px;
+    color:#444;
+    font-size:13px;
+    line-height:1.5;
+    margin-bottom:20px;
+    padding:14px 16px;
+  }
+  .gb-bank-step__back{
+    background:transparent;
+    border:0;
+    color:#555;
+    cursor:pointer;
+    display:block;
+    font-family:'Sora',sans-serif;
+    font-size:14px;
+    margin:14px auto 0;
+    text-decoration:underline;
+  }
+
+  /* ---- Footer ---- */
+  .site-footer{
+    background:var(--ink);
+    padding:40px 24px;
+    text-align:center;
+  }
+  .site-footer__links{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .site-footer__links a{
+    color:#cfd8d1;
+    font-size:13.5px;
+    text-decoration:none;
+  }
+  .site-footer__links a:hover{ color:#fff; }
+  .site-footer__copy{
+    color:#7d8a82;
+    font-size:12.5px;
+    margin:0;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__title-row">
+      <img loading="lazy" decoding="async" class="hero__logo" src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles logo">
+      <h1 class="hero__title">Healthier Soles</h1>
+    </div>
+    
+    <p class="hero__org">Organized by <a href="https://healthiersolesga.org" target="_blank" rel="noopener">Healthier Soles </a></p>
+  </div>
+</section>
+
+<div class="layout">
+
+  <div class="story">
+    <h2>Why we're raising funds</h2>
+    <p>Every day, kids in underserved communities walk barefoot or in worn-out shoes, exposing them to soil-borne diseases and injuries that are entirely preventable. <strong>Healthier Soles</strong> exists to change that, one pair of shoes at a time.</p>
+    <p>We raised <strong>$30,000</strong> for our 2025 distribution trip to Ghana, providing shoes specifically designed for the region's terrain. Now we're building toward our next trip on <strong>December 10th, 2026</strong> &mdash; and we need your help to get there.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">$30,000</div>
+        <div class="lbl">Raised in 2025</div>
+      </div>
+      <div class="stat">
+        <div class="num">100%</div>
+        <div class="lbl">Goes to footwear</div>
+      </div>
+      <div class="stat">
+        <div class="num">Dec 10</div>
+        <div class="lbl">Next trip, 2026</div>
+      </div>
+    </div>
+
+    <h2>Where your money goes</h2>
+    <ul class="money-list">
+      <li>
+        <span class="pct">100%</span>
+        <span class="desc"><strong>Shoes &amp; footwear.</strong> Every dollar raised through this campaign goes straight to purchasing shoes designed for the terrain kids are walking on.</span>
+      </li>
+      <li>
+        <span class="pct">Ghana</span>
+        <span class="desc"><strong>2025 &amp; 2026 trips.</strong> Funds support our distribution trips alongside partners like Samaritan's Feet, The World Shoe, and Healthier Soles Texas.</span>
+      </li>
+      <li>
+        <span class="pct">1:1</span>
+        <span class="desc"><strong>Volunteer-run.</strong> Our team fundraises and travels on their own time, so your gift isn't diluted by overhead.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="donate-card">
+    <div class="donate-card__raised">$30,000<span>raised of $50,000 goal</span></div>
+    <div class="donate-card__bar"><div class="donate-card__bar-fill"></div></div>
+    <p class="donate-card__goal">60% of the way to our December 2026 trip</p>
+    <a href="https://givebutter.com/healthier-soles-2026-pjdwfd" target="_blank" rel="noopener" class="btn btn-solid">Donate</a>
+    <p class="donate-card__note">Secure checkout powered by Givebutter</p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__links">
+    <a href="https://healthiersolesga.org" target="_blank" rel="noopener">Website</a>
+    <a href="mailto:healthiersoles@gmail.com">Contact</a>
+    <a href="https://givebutter.com/privacy" target="_blank" rel="noopener">Privacy</a>
+    <a href="https://givebutter.com/terms" target="_blank" rel="noopener">Terms</a>
+  </div>
+  <p class="site-footer__copy">Donations processed securely via Givebutter.</p>
+</footer>
+
+<!-- Donate modal -->
+<div class="gb-overlay" id="gbOverlay">
+  <div class="gb-modal">
+    <div class="gb-modal__head">
+      <h3>
+        <svg class="shield" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z" fill="#22c55e"/>
+          <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Choose amount
+      </h3>
+      <button class="gb-modal__close" id="gbClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="gb-tabs">
+      <button class="gb-tab active" data-freq="onetime">One-time</button>
+      <button class="gb-tab" data-freq="monthly">Monthly</button>
+    </div>
+
+    <div class="gb-amounts">
+      <button class="gb-amount-btn active" data-amount="1000">$1,000</button>
+      <button class="gb-amount-btn" data-amount="500">$500</button>
+      <button class="gb-amount-btn" data-amount="250">$250</button>
+      <button class="gb-amount-btn" data-amount="100">$100</button>
+      <button class="gb-amount-btn" data-amount="55">$55</button>
+      <button class="gb-amount-btn" data-amount="25">$25</button>
+    </div>
+
+    <div class="gb-custom-row">
+      <span class="sym">$</span>
+      <input type="text" inputmode="numeric" id="gbCustomAmount" value="1,000">
+      <span class="cur">USD</span>
+    </div>
+
+    <div class="gb-field-label">Credit a team or team member</div>
+    <div class="gb-select">
+      <span>Select  search</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+
+    <button class="gb-continue" id="gbContinue">Continue</button>
+
+    <div class="gb-bank-step" id="gbBankStep">
+      <h3 class="gb-bank-step__title">Banking Information</h3>
+      <p class="gb-bank-step__text">Your selected donation is ready. Enter your banking or card details securely on Givebutter to complete your donation.</p>
+      <p class="gb-bank-step__amount" id="gbBankAmount">Donation: $1,000</p>
+      <div class="gb-bank-step__secure">Your payment information is handled securely by Givebutter. Healthier Soles does not collect or store your banking details on this website.</div>
+      <button class="gb-continue" id="gbSecurePayment">Continue to secure payment</button>
+      <button class="gb-bank-step__back" id="gbBack" type="button">Back</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var CAMPAIGN_URL = "https://givebutter.com/healthier-soles-2026-pjdwfd";
+    var overlay = document.getElementById('gbOverlay');
+    var closeBtn = document.getElementById('gbClose');
+    var tabs = document.querySelectorAll('.gb-tab');
+    var amountBtns = document.querySelectorAll('.gb-amount-btn');
+    var customInput = document.getElementById('gbCustomAmount');
+    var continueBtn = document.getElementById('gbContinue');
+    var bankStep = document.getElementById('gbBankStep');
+    var securePaymentBtn = document.getElementById('gbSecurePayment');
+    var backBtn = document.getElementById('gbBack');
+    var bankAmount = document.getElementById('gbBankAmount');
+    var modalTitle = document.querySelector('.gb-modal__head h3');
+    var selectionFields = [document.querySelector('.gb-tabs'), document.querySelector('.gb-amounts'), document.querySelector('.gb-custom-row')];
+    var currentFreq = 'onetime';
+    var currentAmount = 1000;
+
+    function resetCheckoutStep(){
+      bankStep.classList.remove('is-visible');
+      selectionFields.forEach(function(field){ field.style.display = ''; });
+      continueBtn.style.display = '';
+      modalTitle.lastChild.textContent = ' Choose amount';
+    }
+
+    function openModal(){
+      resetCheckoutStep();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Wire up the Donate button to open the modal
+    document.querySelectorAll('a.btn-solid').forEach(function(a){
+      if (a.textContent.trim() === 'Donate'){
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          openModal();
+        });
+      }
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeModal();
+    });
+
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(function(t){ t.classList.remove('active'); });
+        tab.classList.add('active');
+        currentFreq = tab.getAttribute('data-freq');
+      });
+    });
+
+    amountBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        amountBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentAmount = parseInt(btn.getAttribute('data-amount'), 10);
+        customInput.value = currentAmount.toLocaleString('en-US');
+      });
+    });
+
+    customInput.addEventListener('input', function(){
+      var raw = customInput.value.replace(/[^0-9]/g, '');
+      currentAmount = raw ? parseInt(raw, 10) : 0;
+      amountBtns.forEach(function(b){ b.classList.remove('active'); });
+    });
+    customInput.addEventListener('blur', function(){
+      if (currentAmount) customInput.value = currentAmount.toLocaleString('en-US');
+    });
+
+    continueBtn.addEventListener('click', function(){
+      bankAmount.textContent = 'Donation: $' + (currentAmount || 0).toLocaleString('en-US') + (currentFreq === 'monthly' ? ' monthly' : '');
+      selectionFields.forEach(function(field){ field.style.display = 'none'; });
+      continueBtn.style.display = 'none';
+      bankStep.classList.add('is-visible');
+      modalTitle.lastChild.textContent = ' Banking Information';
+    });
+
+    securePaymentBtn.addEventListener('click', function(){
+      window.open(CAMPAIGN_URL, '_blank', 'noopener');
+      closeModal();
+    });
+
+    backBtn.addEventListener('click', function(){
+      bankStep.classList.remove('is-visible');
+      selectionFields.forEach(function(field){ field.style.display = ''; });
+      continueBtn.style.display = '';
+      modalTitle.lastChild.textContent = ' Choose amount';
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+
+</body>
+</html>

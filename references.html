@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>References || Healthier Soles</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/healthier-soles-logo-new.png" />
+<link rel="icon" type="image/png" href="assets/images/resources/healthier-soles-logo-new.png" />
+<style>
+  :root{
+    --green-dark: #0f2622;
+    --green: #174b39;
+    --green-mid: #1f7868;
+    --cream: #f7f5ef;
+    --ink: #1b2820;
+    --ink-dim: #65756d;
+    --gold: #E1C88E;
+    --rule: #e4e1d8;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Sora', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  a{ text-decoration: none; }
+
+  body{ padding-top: 84px; }
+
+  /* ---- Site header (matches home page) ---- */
+  .hs-header{
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    width: 100%;
+    background-color: #0F1C15;
+    z-index: 999;
+  }
+
+  .hs-header__wrapper-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 16px 24px;
+    gap: 20px;
+  }
+
+  .hs-header__logo a{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .hs-header__logo-icon{
+    width: 52px;
+    height: 52px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  .hs-header__logo-text{
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .hs-header__menu{
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 0.9vw, 14px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .hs-header__menu > li > a{
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(12px, 1vw, 14px);
+    font-weight: 700;
+    letter-spacing: .3px;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.92;
+    transition: all 300ms ease;
+  }
+
+  .hs-header__menu > li > a:hover,
+  .hs-header__menu > li.current > a{
+    opacity: 1;
+    border-color: rgba(255,255,255,.3);
+  }
+
+  .hs-header__btn{
+    display: inline-block;
+    white-space: nowrap;
+    padding: 10px 27px;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(12px, 1vw, 15px);
+    font-weight: 800;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 300ms ease;
+    flex-shrink: 0;
+  }
+
+  .hs-header__btn:hover{ background-color: #43a047; }
+
+  .hs-header__toggler{
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1199px){
+    .hs-header__menu{ display: none; }
+    .hs-header__toggler{ display: inline-flex; align-items:center; justify-content:center; margin-left: auto; }
+  }
+
+  /* phones: keep logo, menu button and Donate button inside the screen
+     (matches the header on the other pages) */
+  @media (max-width: 575px){
+    body{ padding-top: 60px; }
+    .hs-header__wrapper-inner{ padding: 9px 14px; gap: 10px; }
+    .hs-header__logo a{ gap: 10px; }
+    .hs-header__logo-icon{ width: 36px; height: 36px; }
+    .hs-header__logo-text{ font-size: 15px; letter-spacing: .2px; text-transform: none; }
+    .hs-header__toggler{ color: #f5a623; margin-left: auto; }
+    .hs-header__btn{ padding: 9px 18px; font-size: 12px; }
+  }
+
+  /* mobile dropdown panel */
+  .hs-mobile-menu{
+    max-height: 0;
+    overflow: hidden;
+    background-color: #0F1C15;
+    transition: max-height 300ms ease;
+  }
+
+  .hs-mobile-menu.is-open{ max-height: 400px; }
+
+  .hs-mobile-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 6px 24px 18px;
+  }
+
+  .hs-mobile-menu ul li a{
+    display: block;
+    padding: 12px 4px;
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+
+  .hs-mobile-menu ul li:first-child a{ border-top: none; }
+
+  .wrap{
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 72px 24px 100px;
+  }
+
+  .eyebrow{
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin: 0 0 14px;
+  }
+
+  h1{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 400;
+    color: var(--green-dark);
+    margin: 0 0 16px;
+    line-height: 1.15;
+  }
+
+  .lede{
+    color: var(--ink-dim);
+    font-size: 16px;
+    max-width: 65ch;
+    margin: 0 0 56px;
+  }
+
+  .ref-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: ref;
+  }
+
+  .ref-item{
+    border-top: 1px solid var(--rule);
+    padding: 26px 0 26px 56px;
+    position: relative;
+    counter-increment: ref;
+  }
+
+  .ref-item:last-child{
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .ref-item::before{
+    content: counter(ref);
+    position: absolute;
+    left: 0;
+    top: 26px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ref-item__text{
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .ref-item__text i{
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .ref-item__text a{
+    color: var(--green-mid);
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  .ref-item__text a:hover{
+    text-decoration: underline;
+  }
+
+  .home-cta{
+    margin-top: 64px;
+    text-align: center;
+  }
+
+  .home-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-mid);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 32px;
+    border-radius: 999px;
+    transition: background 200ms ease, transform 200ms ease;
+  }
+
+  .home-btn:hover{
+    background: var(--green-dark);
+    transform: translateY(-2px);
+  }
+
+  .home-btn svg{
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (max-width: 560px){
+    .wrap{ padding: 56px 20px 80px; }
+    .ref-item{ padding: 22px 0 22px 46px; }
+    .ref-item::before{ width: 28px; height: 28px; font-size: 12.5px; top: 22px; }
+    .ref-item__text{ font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hs-header">
+  <div class="hs-header__wrapper-inner">
+    <div class="hs-header__logo">
+      <a href="index.html">
+        <img src="assets/images/resources/healthier-soles-logo-new.png" alt="Healthier Soles" class="hs-header__logo-icon">
+        <span class="hs-header__logo-text">Healthier Soles</span>
+      </a>
+    </div>
+
+    <ul class="hs-header__menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="cause.html">Our Cause</a></li>
+      <li><a href="partners.html">Our Partners</a></li>
+      <li><a href="events.html">Our Events</a></li>
+      <li><a href="join%20cause.html">Join Our Cause</a></li>
+    </ul>
+
+    <button class="hs-header__toggler" id="hsToggler" aria-label="Open menu">&#9776;</button>
+
+    <a href="https://givebutter.com/healthier-soles-2026-pjdwfd" class="hs-header__btn">Donate</a>
+  </div>
+
+  <nav class="hs-mobile-menu" id="hsMobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="cause.html">Our Cause</a></li>
+      <li><a href="partners.html">Our Partners</a></li>
+      <li><a href="events.html">Our Events</a></li>
+      <li><a href="join%20cause.html">Join Our Cause</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  document.getElementById('hsToggler').addEventListener('click', function(){
+    document.getElementById('hsMobileMenu').classList.toggle('is-open');
+  });
+</script>
+
+<div class="wrap">
+
+  <p class="eyebrow">Sources</p>
+  <h1>References</h1>
+  <p class="lede">The research, data, and imagery cited throughout the Healthier Soles website.</p>
+
+  <ol class="ref-list">
+
+    <li class="ref-item">
+      <p class="ref-item__text">Abiso TL, Abebe Kerbo A, Wolka Woticha E. Epidemiology of podoconiosis in sub-Saharan Africa: A systematic review and meta-analysis.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">CDC. &ldquo;About Hookworm.&rdquo; <i>Parasites &ndash; Soil-Transmitted Helminths</i>, 16 Feb. 2024, <a href="https://www.cdc.gov/sth/about/hookworm.html" target="_blank" rel="noopener">www.cdc.gov/sth/about/hookworm.html</a>.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Deribe, Kebede et al. &ldquo;The global atlas of podoconiosis.&rdquo; <i>The Lancet. Global Health</i>, vol. 5, 5 (2017): e477&ndash;e479. doi:<a href="https://doi.org/10.1016/S2214-109X(17)30140-7" target="_blank" rel="noopener">10.1016/S2214-109X(17)30140-7</a></p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Healthier Soles. United States of America: World Health Organization; 2025. Licence: CC BY-NC-SA 3.0 IGO.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">&ldquo;Home &ndash; Samaritan&rsquo;s Feet International.&rdquo; <i>Samaritan&rsquo;s Feet International</i>, <a href="https://samaritansfeet.org/" target="_blank" rel="noopener">samaritansfeet.org</a>.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Hotez, Peter J, et al. &ldquo;Hookworm: &lsquo;The Great Infection of Mankind.&rsquo;&rdquo; <i>PLoS Medicine</i>, vol. 2, no. 3, 29 Mar. 2005, p. e67, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1069663/" target="_blank" rel="noopener">www.ncbi.nlm.nih.gov/pmc/articles/PMC1069663/</a>, <a href="https://doi.org/10.1371/journal.pmed.0020067" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pmed.0020067</a>.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">MA, Christine Miller. &ldquo;Ubuntu &ndash; Community Love and Regard &ndash; Love in the Boardroom.&rdquo; <i>Love in the Boardroom</i>, 20 Oct. 2019, <a href="https://loveintheboardroom.com/ubuntu-community-love-and-regard/" target="_blank" rel="noopener">loveintheboardroom.com/ubuntu-community-love-and-regard/</a>. Accessed 9 Feb. 2025.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Temesgen Lera Abiso, et al. &ldquo;Epidemiology of Podoconiosis in Sub-Saharan Africa: A Systematic Review and Meta-Analysis.&rdquo; <i>Sage Open Medicine</i>, vol. 11, 1 Jan. 2023, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10504841/" target="_blank" rel="noopener">www.ncbi.nlm.nih.gov/pmc/articles/PMC10504841/</a>, <a href="https://doi.org/10.1177/20503121231193602" target="_blank" rel="noopener">https://doi.org/10.1177/20503121231193602</a>. Accessed 11 Feb. 2024.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Unsplash. &ldquo;Beautiful Free Images &amp; Pictures.&rdquo; <i>Unsplash</i>, Unsplash, <a href="https://unsplash.com/" target="_blank" rel="noopener">unsplash.com</a>.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">Wanji, Samuel, et al. &ldquo;Podoconiosis &ndash; from Known to Unknown: Obstacles to Tackle.&rdquo; <i>Acta Tropica</i>, vol. 219, July 2021, p. 105918, <a href="https://doi.org/10.1016/j.actatropica.2021.105918" target="_blank" rel="noopener">https://doi.org/10.1016/j.actatropica.2021.105918</a>.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">&ldquo;Podoconiosis &ndash; from Known to Unknown: Obstacles to Tackle.&rdquo; <i>Acta Tropica</i>, vol. 219, July 2021, p. 105918, <a href="https://doi.org/10.1016/j.actatropica.2021.105918" target="_blank" rel="noopener">https://doi.org/10.1016/j.actatropica.2021.105918</a>. Accessed 1 Apr. 2023.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">&ldquo;WHO Headquarters Photo Library &ndash; Search Results.&rdquo; <i>Who.int</i>, 2025, <a href="https://photos.hq.who.int/search/results?s%5Badv%5D=1&sort_by=date_created_s&s%5Bkeywords%5D=barefoot" target="_blank" rel="noopener">photos.hq.who.int</a>. Accessed 9 Feb. 2025.</p>
+    </li>
+
+    <li class="ref-item">
+      <p class="ref-item__text">&ldquo;World Shoe, Inc.&rdquo; <i>World Shoe, Inc</i>, 2024, <a href="https://theworldshoe.com/" target="_blank" rel="noopener">theworldshoe.com</a>.</p>
+    </li>
+
+  </ol>
+
+  <div class="home-cta">
+    <a class="home-btn" href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10a1 1 0 001 1h4a1 1 0 001-1v-5h2v5a1 1 0 001 1h4a1 1 0 001-1V10"></path></svg>
+      Back to Home
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

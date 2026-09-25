@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Team || Healthier Soles</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/healthier-soles-logo-new.png">
+<link rel="icon" type="image/png" href="assets/images/resources/healthier-soles-logo-new.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EFE4;
+    --sage:#DCE9E1;
+    --deep-green:#1F3A2E;
+    --leaf-green:#4C9A4C;
+    --leaf-green-dark:#3F8340;
+    --text-gray:#767873;
+    --border:#C9D6CD;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Nunito Sans', sans-serif;
+    background:var(--cream);
+    color:var(--deep-green);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+  }
+  .card{
+    width:100%;
+    max-width:600px;
+    background:var(--sage);
+    border-radius:20px;
+    padding:48px 44px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:34px;
+    color:var(--deep-green);
+    margin-bottom:14px;
+  }
+  .intro{
+    font-size:15px;
+    color:var(--text-gray);
+    line-height:1.6;
+    margin-bottom:32px;
+    max-width:46ch;
+  }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .field label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--deep-green);
+    margin-bottom:7px;
+  }
+  .field .hint{
+    font-weight:400;
+    color:var(--text-gray);
+    font-size:12px;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    padding:12px 14px;
+    font-family:'Nunito Sans', sans-serif;
+    font-size:14px;
+    color:var(--deep-green);
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--leaf-green);
+    box-shadow:0 0 0 3px rgba(76,154,76,0.18);
+  }
+  .field textarea{
+    resize:vertical;
+    min-height:90px;
+    line-height:1.5;
+  }
+  .submit-btn{
+    margin-top:8px;
+    padding:14px 28px;
+    background:var(--leaf-green);
+    color:var(--white);
+    border:none;
+    border-radius:999px;
+    font-family:'Nunito Sans', sans-serif;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:background .15s ease;
+    align-self:flex-start;
+  }
+  .submit-btn:hover{ background:var(--leaf-green-dark); }
+  .fine-print{
+    font-size:12px;
+    color:var(--text-gray);
+    line-height:1.5;
+  }
+  .success{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:10;
+    align-items:center;
+    justify-content:center;
+    padding:48px;
+    background:var(--cream);
+  }
+  .success.show{ display:flex; }
+  .success-card{
+    width:min(100%, 1168px);
+    min-height:590px;
+    border-radius:38px;
+    background:var(--sage);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:64px 32px;
+    text-align:center;
+  }
+  .success-mark{
+    width:94px; height:94px;
+    border-radius:50%;
+    background:var(--white);
+    color:var(--leaf-green);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 42px auto;
+    font-size:46px;
+    font-weight:700;
+  }
+  .success h3{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:48px;
+    margin-bottom:18px;
+    color:var(--deep-green);
+  }
+  .success p{
+    font-size:26px;
+    color:var(--text-gray);
+    max-width:30ch;
+    margin:0 auto;
+    line-height:1.7;
+  }
+  @media (max-width:520px){
+    .card{padding:34px 26px; border-radius:16px;}
+    .row{grid-template-columns:1fr;}
+    h1{font-size:28px;}
+    .success{padding:20px;}
+    .success-card{min-height:520px; border-radius:24px; padding:40px 22px;}
+    .success-mark{width:72px; height:72px; margin-bottom:28px; font-size:36px;}
+    .success h3{font-size:34px;}
+    .success p{font-size:18px;}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div id="formView">
+      <h1>Join Our Team</h1>
+      <p class="intro">Volunteer alongside us at fundraisers and mission trips throughout the year. Tell us a bit about yourself.</p>
+
+      <form id="joinForm">
+        <div class="row">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+1 (000) 000-0000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Become a partner">Becoming a partner</option>
+            <option value="Become a sponsor">Becoming a sponsor</option>
+            <option value="Volunteer">Volunteering</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Anything else you'd like to share? <span class="hint">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Tell us a little about why you'd like to join."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Join Our Team</button>
+        <p class="fine-print">We'll get back to you within a few days of receiving your details.</p>
+      </form>
+    </div>
+
+    <div class="success" id="successView">
+      <div class="success-card">
+        <div class="success-mark">✓</div>
+        <h3>Welcome aboard</h3>
+        <p>Thanks for stepping up. We've received your details and will reach out soon.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const form = document.getElementById('joinForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const formData = new FormData(form);
+    formData.append('_subject', 'Join Our Team application');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    fetch('https://formsubmit.co/ajax/info@healthiersoles.org', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(){
+        document.getElementById('formView').style.display = 'none';
+        document.getElementById('successView').classList.add('show');
+        setTimeout(function(){
+          window.location.href = 'index.html';
+        }, 2000);
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join Our Team';
+        alert('Something went wrong sending your details. Please try again, or email info@healthiersoles.org directly.');
+      });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions and Privacy Policy || Healthier Soles</title>
+<style>
+  :root{
+    --bg: #F9F9F9;
+    --panel: #ffffff;
+    --rule: #E2E2E2;
+    --ink: #121D18;
+    --ink-dim: #6C6E76;
+    --gold: #007B39;
+    --gold-dim: #05602c;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    line-height: 1.6;
+  }
+
+  .wrap{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 80px 28px 120px;
+  }
+
+  header.page-head{
+    margin-bottom: 56px;
+  }
+
+  .eyebrow{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+
+  h1{
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 500;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .lede{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink-dim);
+    font-size: 15.5px;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .updated{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--gold-dim);
+    margin-top: 20px;
+  }
+
+  .part-divider{
+    margin: 60px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .part-divider .part-label{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .part-divider .line{
+    height: 1px;
+    background: var(--rule);
+    flex: 1;
+  }
+
+  .part-title{
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 6px 0 24px;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    box-shadow: 0 4px 18px rgba(18, 29, 24, 0.06);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  thead th{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: var(--gold);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--rule);
+    background: #F3F6F4;
+  }
+
+  thead th.col-num{
+    width: 56px;
+  }
+
+  thead th.col-clause{
+    width: 200px;
+  }
+
+  tbody td{
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td{
+    border-bottom: none;
+  }
+
+  tbody tr:hover{
+    background: rgba(201, 154, 74, 0.05);
+  }
+
+  td.col-num{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--gold-dim);
+  }
+
+  td.col-clause{
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  td.col-detail{
+    color: var(--ink-dim);
+    font-size: 15.5px;
+  }
+
+  td.col-detail ul{
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  td.col-detail li{
+    margin-bottom: 6px;
+  }
+
+  td.col-detail li::marker{
+    color: var(--gold-dim);
+  }
+
+  td.col-detail li:last-child{
+    margin-bottom: 0;
+  }
+
+  .table-scroll{
+    overflow-x: auto;
+  }
+
+  footer.page-foot{
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .copyright{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+
+  .home-btn{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 3px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .home-btn:hover{
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #ffffff;
+  }
+
+  .home-btn:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .home-btn svg{
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+  }
+
+  @media (max-width: 640px){
+    .wrap{ padding: 56px 20px 90px; }
+    thead{ display: none; }
+    table, tbody, tr, td{ display: block; width: 100%; }
+    tbody tr{
+      border-bottom: 1px solid var(--rule);
+      padding: 18px 0;
+    }
+    tbody tr td{ border-bottom: none; padding: 4px 20px; }
+    td.col-num{
+      font-size: 12px;
+    }
+    td.col-clause{
+      padding-top: 8px !important;
+    }
+    td.col-detail{
+      padding-bottom: 12px !important;
+    }
+    footer.page-foot{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms &amp; Conditions and Privacy Policy</h1>
+    <p class="lede">The rules for using this website, and how we handle the information you share with us.</p>
+    
+  </header>
+
+  <div class="part-divider">
+    <span class="part-label">Part One</span>
+    <span class="line"></span>
+  </div>
+  <p class="part-title" id="terms">Terms &amp; Conditions</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-num">#</th>
+          <th class="col-clause">Clause</th>
+          <th class="col-detail">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-num">01</td>
+          <td class="col-clause">Acceptance of terms</td>
+          <td class="col-detail">By accessing or using this website, you agree to be bound by these Terms &amp; Conditions. If you do not agree with any part of these terms, please discontinue use of the site.</td>
+        </tr>
+        <tr>
+          <td class="col-num">02</td>
+          <td class="col-clause">Use of the website</td>
+          <td class="col-detail">
+            You agree to use our services responsibly and in a manner consistent with all applicable laws. You will not use this website to:
+            <ul>
+              <li>Engage in any unlawful, fraudulent, or harmful activity</li>
+              <li>Interfere with or disrupt the security or performance of the site</li>
+              <li>Attempt to gain unauthorised access to any part of the website or its systems</li>
+              <li>Transmit spam, malware, or any other harmful code</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-num">03</td>
+          <td class="col-clause">Intellectual property</td>
+          <td class="col-detail">All content on this website — including text, graphics, logos, images, and layout — is owned by us or our licensors and is protected by copyright and other intellectual property laws. This content may not be copied, reproduced, distributed, or otherwise used without our prior written permission.</td>
+        </tr>
+        <tr>
+          <td class="col-num">04</td>
+          <td class="col-clause">Accuracy of information</td>
+          <td class="col-detail">We make reasonable efforts to keep the information on this website accurate and current, but we do not guarantee its completeness or reliability. Content is provided for general informational purposes and is subject to change without notice.</td>
+        </tr>
+        <tr>
+          <td class="col-num">05</td>
+          <td class="col-clause">Limitation of liability</td>
+          <td class="col-detail">We are not liable for any direct, indirect, or consequential loss or damage arising from your use of this website, to the fullest extent permitted by applicable law.</td>
+        </tr>
+        <tr>
+          <td class="col-num">06</td>
+          <td class="col-clause">Third-party links</td>
+          <td class="col-detail">This website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of any linked sites, and including a link does not imply our endorsement.</td>
+        </tr>
+        <tr>
+          <td class="col-num">07</td>
+          <td class="col-clause">Changes to these terms</td>
+          <td class="col-detail">We may update these Terms &amp; Conditions from time to time. Continued use of the website after changes are posted constitutes acceptance of the revised terms.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="part-divider">
+    <span class="part-label">Part Two</span>
+    <span class="line"></span>
+  </div>
+  <p class="part-title" id="privacy">Privacy Policy</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-num">#</th>
+          <th class="col-clause">Clause</th>
+          <th class="col-detail">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-num">01</td>
+          <td class="col-clause">Our commitment</td>
+          <td class="col-detail">We respect your privacy and are committed to protecting your personal information. This policy explains what information we collect, how we use it, and the choices you have.</td>
+        </tr>
+        <tr>
+          <td class="col-num">02</td>
+          <td class="col-clause">Information we collect</td>
+          <td class="col-detail">
+            Depending on how you interact with our website, we may collect:
+            <ul>
+              <li>Contact details you provide, such as your name, email address, and phone number</li>
+              <li>Messages or enquiries you submit through our contact forms</li>
+              <li>Technical information such as browser type, device, and general usage data</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-num">03</td>
+          <td class="col-clause">How we use your information</td>
+          <td class="col-detail">Your information is used only to provide our services, respond to your inquiries, and improve our website. We do not sell your personal information to third parties.</td>
+        </tr>
+        <tr>
+          <td class="col-num">04</td>
+          <td class="col-clause">Data security</td>
+          <td class="col-detail">We take reasonable technical and organisational measures to protect your information against unauthorised access, loss, or misuse. However, no method of transmission over the internet is entirely secure, and we cannot guarantee absolute security.</td>
+        </tr>
+        <tr>
+          <td class="col-num">05</td>
+          <td class="col-clause">Cookies</td>
+          <td class="col-detail">Our website may use cookies to improve your browsing experience and understand how visitors use our site. You can control or disable cookies through your browser settings at any time.</td>
+        </tr>
+        <tr>
+          <td class="col-num">06</td>
+          <td class="col-clause">Your rights</td>
+          <td class="col-detail">You may request access to, correction of, or deletion of your personal information held by us at any time by contacting us using the details provided on our website.</td>
+        </tr>
+        <tr>
+          <td class="col-num">07</td>
+          <td class="col-clause">Changes to this policy</td>
+          <td class="col-detail">We may revise this Privacy Policy periodically. Any changes will be posted on this page, and the "last updated" date at the top will reflect the most recent revision.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="page-foot">
+    <p class="copyright">&copy; 2026 All Rights Reserved.</p>
+    <a class="home-btn" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12l9-9 9 9"></path>
+        <path d="M5 10v10a1 1 0 001 1h4a1 1 0 001-1v-5h2v5a1 1 0 001 1h4a1 1 0 001-1V10"></path>
+      </svg>
+      Back to Home
+    </a>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Suggestions || Healthier Soles</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/healthier-soles-logo-new.png">
+<link rel="icon" type="image/png" href="assets/images/resources/healthier-soles-logo-new.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EFE4;
+    --sage:#DCE9E1;
+    --deep-green:#1F3A2E;
+    --leaf-green:#4C9A4C;
+    --leaf-green-dark:#3F8340;
+    --text-gray:#767873;
+    --border:#C9D6CD;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Nunito Sans', sans-serif;
+    background:var(--cream);
+    color:var(--deep-green);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+  }
+  .card{
+    width:100%;
+    max-width:600px;
+    background:var(--sage);
+    border-radius:20px;
+    padding:48px 44px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:34px;
+    color:var(--deep-green);
+    margin-bottom:14px;
+  }
+  .intro{
+    font-size:15px;
+    color:var(--text-gray);
+    line-height:1.6;
+    margin-bottom:32px;
+    max-width:46ch;
+  }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .field label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--deep-green);
+    margin-bottom:7px;
+  }
+  .field .hint{
+    font-weight:400;
+    color:var(--text-gray);
+    font-size:12px;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    padding:12px 14px;
+    font-family:'Nunito Sans', sans-serif;
+    font-size:14px;
+    color:var(--deep-green);
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--leaf-green);
+    box-shadow:0 0 0 3px rgba(76,154,76,0.18);
+  }
+  .field textarea{
+    resize:vertical;
+    min-height:120px;
+    line-height:1.55;
+  }
+  .rating{
+    display:flex;
+    gap:8px;
+  }
+  .rating input{ display:none; }
+  .rating label{
+    width:42px; height:42px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:700;
+    color:var(--text-gray);
+    background:var(--white);
+    cursor:pointer;
+    transition:all .15s ease;
+    margin:0;
+  }
+  .rating input:checked + label{
+    background:var(--leaf-green);
+    border-color:var(--leaf-green);
+    color:var(--white);
+  }
+  .submit-btn{
+    margin-top:4px;
+    padding:14px 28px;
+    background:var(--leaf-green);
+    color:var(--white);
+    border:none;
+    border-radius:999px;
+    font-family:'Nunito Sans', sans-serif;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:background .15s ease;
+    align-self:flex-start;
+  }
+  .submit-btn:hover{ background:var(--leaf-green-dark); }
+  .fine-print{
+    font-size:12px;
+    color:var(--text-gray);
+    line-height:1.5;
+  }
+  .success{
+    display:none;
+    text-align:center;
+    padding:30px 10px;
+  }
+  .success.show{ display:block; }
+  .success-mark{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:var(--white);
+    color:var(--leaf-green);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 18px auto;
+    font-size:22px;
+    font-weight:700;
+  }
+  .success h3{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:24px;
+    margin-bottom:8px;
+    color:var(--deep-green);
+  }
+  .success p{
+    font-size:14px;
+    color:var(--text-gray);
+    max-width:38ch;
+    margin:0 auto;
+    line-height:1.6;
+  }
+  @media (max-width:520px){
+    .card{padding:34px 26px; border-radius:16px;}
+    .row{grid-template-columns:1fr;}
+    h1{font-size:28px;}
+    .rating label{width:auto; flex:1; padding:10px 0;}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div id="formView">
+      <h1>Suggestions</h1>
+      <p class="intro">Have an idea for a new fundraiser or partner? We'd love to hear it.</p>
+
+      <form id="suggestionForm">
+        <div class="row">
+          <div class="field">
+            <label for="name">Name <span class="hint">(optional)</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="hint">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="suggestion">Your suggestion</label>
+          <textarea id="suggestion" name="suggestion" required placeholder="Share as much detail as you'd like."></textarea>
+        </div>
+
+        <div class="field">
+          <label>How would you rate your experience with us? <span class="hint">(optional)</span></label>
+          <div class="rating">
+            <input type="radio" id="r1" name="rating" value="1"><label for="r1">1</label>
+            <input type="radio" id="r2" name="rating" value="2"><label for="r2">2</label>
+            <input type="radio" id="r3" name="rating" value="3"><label for="r3">3</label>
+            <input type="radio" id="r4" name="rating" value="4"><label for="r4">4</label>
+            <input type="radio" id="r5" name="rating" value="5"><label for="r5">5</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Your Suggestions</button>
+        <p class="fine-print">We read every submission. We won't be able to reply to all of them, but they all get seen.</p>
+      </form>
+    </div>
+
+    <div class="success" id="successView">
+      <div class="success-mark">✓</div>
+      <h3>Thanks for sharing this</h3>
+      <p>Your suggestion has been sent to our team. We genuinely appreciate you taking the time.</p>
+    </div>
+  </div>
+
+<script>
+  const form = document.getElementById('suggestionForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const formData = new FormData(form);
+    formData.append('_subject', 'New suggestion from healthiersoles.org');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    fetch('https://formsubmit.co/ajax/info@healthiersoles.org', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(){
+        document.getElementById('formView').style.display = 'none';
+        document.getElementById('successView').classList.add('show');
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Your Suggestions';
+        alert('Something went wrong sending your suggestion. Please try again, or email info@healthiersoles.org directly.');
+      });
+  });
+</script>
+</body>
+</html>
